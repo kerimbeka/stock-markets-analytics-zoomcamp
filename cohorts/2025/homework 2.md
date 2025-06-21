@@ -1,4 +1,4 @@
-## Module 2 Homework
+## Module 2 Homework (2025 Cohort)
 
 In this homework, we're going to combine data from various sources to process it in Pandas and generate additional fields.
 
@@ -18,9 +18,11 @@ From the withdrawn IPO list ([stockanalysis.com/ipos/withdrawn](https://stockana
    - “Acquisition Corp” or “Acquisition Corporation” → `Acq.Corp`
    - “Inc” or “Incorporated” → `Inc`
    - “Group” → `Group`
+   - “Ltd” or “Limited” → `Limited`
    - “Holdings” → `Holdings`
-   - “Ltd” or “Limited” → `Ltd`
    - Others → `Other`
+
+  *  Order: Please follow the listed order of classes and assign the first matched value (e.g., for 'shenni holdings limited', you assign the 'Limited' class).
 
   * Hint: make your function more robust by converting names to lowercase and splitting into words before matching patterns.
 
@@ -58,6 +60,12 @@ The goal is to replicate the large-scale `yfinance` OHLCV data download and perf
 
    ```python
    stocks_df['Sharpe'] = (stocks_df['growth_252d'] - 0.045) / stocks_df['volatility']
+   ```
+
+   ⚠️ **IMPORTANT** Please use the original version of annualized volatility calculation (it was later corrected to another formula):
+   ```python
+   stocks_df['volatility'] =   stocks_df['Close'].rolling(30).std() * np.sqrt(252)
+   ```
 4. Filter the DataFrame to keep data only for the trading day:  
    **‘2025-06-06’**
 
@@ -142,7 +150,8 @@ Apply a simple rule-based trading strategy using the **Relative Strength Index (
    - Focus on getting **RSI** computed using **Code Snippets 8 and 9**.  
    - This process is essential and will help during the capstone project.
 
-2. **Alternative (if tech indicators fail to generate):**  
+2. ⚠️ **IMPORTANT** Please use this file to solve the Home Assignment (**all next steps**)
+ 
    Download precomputed data using this snippet:
 
    ```python
