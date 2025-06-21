@@ -1,0 +1,16 @@
+[project]
+name = "02-dataframe-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "gdown>=5.2.0",
+    "jupyter>=1.1.1",
+    "lxml>=5.4.0",
+    "pandas>=2.3.0",
+    "polars>=1.30.0",
+    "pyarrow>=20.0.0",
+    "requests>=2.32.4",
+    "yfinance>=0.2.62",
+]
