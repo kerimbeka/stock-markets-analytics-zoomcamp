@@ -1,0 +1,18 @@
+[project]
+name = "03-modeling"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "gdown>=5.2.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.3",
+    "pandas>=2.3.0",
+    "pandas-datareader>=0.10.0",
+    "plotly>=6.2.0",
+    "polars>=1.31.0",
+    "pyarrow>=20.0.0",
+    "scikit-learn>=1.7.0",
+    "yfinance>=0.2.64",
+]
